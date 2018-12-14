@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Index Page</h1>
+        {% if user.is_authenticated %}
+            <h1>Your name is {{user.username}}</h1>
+            <a href="/accounts/logout">Logout</a>
+        {% else %}
+            <h1>Index</h1>
+        {% endif %}
+    </body>
+</html>

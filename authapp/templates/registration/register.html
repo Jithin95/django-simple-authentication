@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Register</title>
+    </head>
+    <body>
+        <h1>Register</h1>
+        {% if form.errors %}
+            {{form.errors}}
+            <p>Error in form</p>
+        {% endif %}
+        <form  action="{% url 'authapp:register' %}" method="post">
+            {% csrf_token %}
+            <p>Username : {{ form.username }}</p>
+            <p>Password : {{ form.password1 }}</p>
+            <p>Confirm Password : {{ form.password2 }}</p>
+            <input type="submit" value="Register">
+        </form>
+    </body>
+</html>
